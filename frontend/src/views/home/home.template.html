@@ -1,0 +1,57 @@
+<div>
+  <form ng-submit="vm.submit()" name="mainForm" class="full-width">
+
+    <md-card class="main-form">
+      <img src="../../assets/img/streem.png" class="logo-streem">
+      <md-card-content layout="column" layout-align="end center">
+
+        <!-- Before  -->
+        <md-input-container class="full-width">
+          <label>Before</label>
+          <input ng-model="vm.params.before" type="number" min=0>
+        </md-input-container>
+
+        <!-- After  -->
+        <md-input-container class="full-width">
+          <label>After</label>
+          <input ng-model="vm.params.after" type="number" min=0>
+        </md-input-container>
+
+        <!-- Interval  -->
+        <md-input-container class="full-width">
+          <label>Interval</label>
+          <input ng-model="vm.params.interval" type="text" ng-pattern="/[0-9]*[dhwyms]/" name="interval">
+          <div ng-messages="mainForm.interval.$error" role="alert">
+            <div ng-message-exp="['pattern']">
+              Interval must be one or more digit(s) then one of the following characters : "d","h","w","y","m","s"
+            </div>
+          </div>
+        </md-input-container class="full-width">
+
+        <!-- Urls  -->
+        <md-chips ng-model="vm.params.urls" placeholder="Enter some URLs" class="full-width urls-chips"></md-chips>
+      </md-card-content>
+
+      <section layout="column" class="submit-block" layout-align="center center">
+        <section ng-if="vm.errorMessage.length > 0" class="error-block animation-appear">
+          {{vm.errorMessage}}
+        </section>
+        <md-button class="md-primary md-raised submit-button animation-appear" type="submit" 
+          ng-if="!vm.loading" ng-disabled="mainForm.$invalid">
+          Load
+        </md-button>
+        <div id="cssload-loader" ng-if="vm.loading">
+          <div class="cssload-dot"></div>
+          <div class="cssload-dot"></div>
+          <div class="cssload-dot"></div>
+          <div class="cssload-dot"></div>
+          <div class="cssload-dot"></div>
+          <div class="cssload-dot"></div>
+          <div class="cssload-dot"></div>
+          <div class="cssload-dot"></div>
+        </div>
+      </section>
+    </md-card>
+  </form>
+  <svg class="histogram animation-appear" width="1250" height="500" ng-if="vm.histogramDisplayed" id="histo"></svg>
+</div>

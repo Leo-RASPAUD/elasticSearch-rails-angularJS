@@ -1,0 +1,72 @@
+$width: 500px;
+
+rect.bar {
+  fill: #3F51B5;
+}
+
+.error-block {
+    height:50px;
+    color: red;
+    text-align: center;
+}
+
+.submit-block {
+    height: 100px;
+}
+
+.histogram {
+    padding: 5% 0 0 600px;
+}
+
+.main-form {
+    position: absolute;
+    left: 2%;
+    top: 2%;
+    z-index: 1;
+    max-width: $width;
+    width: $width;
+    height: 540px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.urls-chips {
+    margin: 18px 0;
+    width: 100%;
+}
+
+.logo-streem {
+    margin: 10px 0 0 10px;
+    width: 127px;
+    height: 32px;
+}
+
+.submit-button {
+    margin-bottom: 20px;
+}
+
+.animation-appear {
+    opacity: 0;
+    animation-duration: 0.75s;
+    animation-name: fadeInFromNone;
+    animation-fill-mode: forwards;
+}
+
+.animation-appear.ng-leave {
+    opacity: 0;
+    animation-duration: 0s;
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
