@@ -60,7 +60,7 @@
     "karma-webpack": "^2.0.3",
     "mocha": "^3.3.0",
     "ng-annotate-webpack-plugin": "^0.2.1-pre",
-    "node-sass": "^4.5.2",
+    "node-sass": "^4.13.1",
     "phantomjs-polyfill-find": "ptim/phantomjs-polyfill-find",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.3",
